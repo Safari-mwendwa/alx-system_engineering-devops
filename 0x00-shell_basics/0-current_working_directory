@@ -1,2 +1,2 @@
 #!/bin/bash\n
-pwd
+current_dir=$(pwd)
