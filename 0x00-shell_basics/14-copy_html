@@ -1,0 +1,15 @@
+#!/bin/bash
+# Get the current working directory and its parent directory
+current_dir=$(pwd)
+parent_dir=$(dirname "$current_dir")
+
+# Loop through each HTML file in the current directory
+for file in *.html; do
+    # Check if the file exists in the parent directory and if it's newer
+    if [ ! -e "$parent_dir/$file" ] || [ "$file" -nt "$parent_dir/$file" ]; then
+        # Copy the file to the parent directory
+        cp "$file" "$parent_dir/"
+        echo "Copying $file to $parent_dir/"
+    fi
+done
+
