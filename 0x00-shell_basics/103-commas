@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -A1 | LC_COLLATE=C sort -t'/' -k1,1V | paste -sd,
